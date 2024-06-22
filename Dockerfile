@@ -3,11 +3,14 @@ FROM node:16-alpine as frontend
 
 WORKDIR /app
 
-# Copy the front-end files
+# Copy the front-end package files and install dependencies
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm install
 
+# Copy the entire frontend directory to the working directory
 COPY frontend/ ./
+
+# Build the React front-end
 RUN npm run build
 
 # Stage 2: Set up the Python Flask back-end
