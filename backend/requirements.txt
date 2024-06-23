@@ -5,3 +5,4 @@ markupsafe==2.0.1
 itsdangerous>=2.0
 click>=7.1.2
 Jinja2>=3.0
+prometheus_flask_exporter
