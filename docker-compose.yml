@@ -51,8 +51,7 @@ services:
     expose:
       - 9090
     networks:
-      - monitoring
-  services:
+      - monitoring     
       
   grafana:
     image: grafana/grafana
