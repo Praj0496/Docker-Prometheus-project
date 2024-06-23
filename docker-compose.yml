@@ -6,7 +6,8 @@ networks:
     driver: bridge
 
 volumes:
-  prometheus_data: {}    
+  prometheus-data: {} 
+  grafana-data: {}
 
 services:
   app:
@@ -52,9 +53,9 @@ services:
       - 9090
     networks:
       - monitoring     
-      
+
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:latest
     container_name: grafana
     ports:
       - 3000:3000
@@ -63,4 +64,4 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
-      - ./grafana:/etc/grafana/provisioning/datasources
+      - grafana-data:/var/lib/grafana
