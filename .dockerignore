@@ -7,4 +7,3 @@ docker-compose.yml
 .git
 .gitignore
 .env
-prometheus.yaml
