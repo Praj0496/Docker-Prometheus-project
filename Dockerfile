@@ -14,5 +14,8 @@ RUN pip install gunicorn
 # Copy the back-end files
 COPY backend/ ./
 
+# Copy docker-compose.yml file into the image
+COPY docker-compose.yml /app/docker-compose.yml
+
 # Set up the Python Flask back-end
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
